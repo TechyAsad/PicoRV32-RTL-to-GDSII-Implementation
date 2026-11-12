@@ -1,0 +1,205 @@
+
+==============================================================================
+1. RUN INFORMATION
+==============================================================================
+Project directory       : /home/asad/vlsi/my_designs/picorv32
+Run directory           : /home/asad/vlsi/my_designs/picorv32/runs/util40
+Configuration           : /home/asad/vlsi/my_designs/picorv32/config.json
+Metrics file            : /home/asad/vlsi/my_designs/picorv32/runs/util40/final/metrics.json
+Synthesis report        : /home/asad/vlsi/my_designs/picorv32/out/stat_sky130.txt
+
+==============================================================================
+2. IMPLEMENTATION CONSTRAINTS
+==============================================================================
+Configured clock period                   : 24.0000 ns
+Equivalent constrained frequency          : 41.6667 MHz
+Configured FP_CORE_UTIL                   : 35.0000 %
+MAX_FANOUT_CONSTRAINT                     : 6.0000
+GPL_CELL_PADDING                          : 2.0000
+DPL_CELL_PADDING                          : 2.0000
+
+NOTE: CLOCK_PERIOD is a timing constraint,
+not proof of the maximum achievable operating frequency.
+
+==============================================================================
+3. STANDALONE YOSYS SYNTHESIS
+==============================================================================
+Standalone mapped synthesis area          : 77,001.350 um^2
+Source: standalone stat_sky130.txt
+Caution: this may not use identical settings to LibreLane synthesis.
+
+==============================================================================
+4. FINAL PHYSICAL AREA AND UTILIZATION
+==============================================================================
+design__instance__area (raw metric)       : 221,436.000 um^2
+    Metric key: design__instance__area
+Final standard-cell area                  : 132,432.000 um^2
+    Metric key: design__instance__area__stdcell
+Final die area                            : 237,213.000 um^2
+    Metric key: design__die__area
+Final core area                           : 221,436.000 um^2
+    Metric key: design__core__area
+Actual reported instance utilization      : 59.8060 %
+Configured target utilization             : 35.0000 %
+Total instance count                      : 42,991
+    Metric key: design__instance__count
+
+==============================================================================
+5. AGGREGATE TIMING METRICS
+==============================================================================
+Worst setup slack / WNS                   : -2.9851 ns
+    Metric key: timing__setup__ws
+Setup TNS                                 : -291.5756 ns
+    Metric key: timing__setup__tns
+Aggregate setup violations                : 658
+    Metric key: timing__setup_vio__count
+Worst hold slack / WNS                    : 0.1046 ns
+    Metric key: timing__hold__ws
+Hold TNS                                  : 0.0000 ns
+    Metric key: timing__hold__tns
+Aggregate hold violations                 : 0
+    Metric key: timing__hold_vio__count
+
+PER-CORNER TIMING
+Corner                              Setup WNS     Setup TNS   Setup vio     Hold WNS   Hold vio
+-----------------------------------------------------------------------------------------------
+max_ff_n40C_1v95                       11.637         0.000       0.000        0.107      0.000
+max_ss_100C_1v60                       -2.985      -291.576     318.000        0.873      0.000
+max_tt_025C_1v80                        7.713         0.000       0.000        0.327      0.000
+min_ff_n40C_1v95                       11.742         0.000       0.000        0.105      0.000
+min_ss_100C_1v60                       -1.816       -57.505     128.000        0.849      0.000
+min_tt_025C_1v80                        8.353         0.000       0.000        0.313      0.000
+nom_ff_n40C_1v95                       11.688         0.000       0.000        0.106      0.000
+nom_ss_100C_1v60                       -2.435      -157.328     212.000        0.858      0.000
+nom_tt_025C_1v80                        8.013         0.000       0.000        0.318      0.000
+Worst setup corner                        : max_ss_100C_1v60
+Worst corner setup WNS                    : -2.9851 ns
+
+==============================================================================
+6. CLOCK TREE AND TIMING REPAIR
+==============================================================================
+Final clock-buffer instances              : 336
+    Metric key: design__instance__count__class:clock_buffer
+Final clock-inverter instances            : 9
+    Metric key: design__instance__count__class:clock_inverter
+Timing-repair buffer instances            : 3,514
+    Metric key: design__instance__count__class:timing_repair_buffer
+Timing-repair buffer area                 : 34,490.600 um^2
+    Metric key: design__instance__area__class:timing_repair_buffer
+Clock-buffer area                         : 5,131.170 um^2
+    Metric key: design__instance__area__class:clock_buffer
+Worst setup clock skew                    : 0.3107 ns
+    Metric key: clock__skew__worst_setup
+Worst hold clock skew                     : -0.4071 ns
+    Metric key: clock__skew__worst_hold
+
+CTS LOG DIAGNOSTICS
+[openroad-cts.log] [INFO CTS-0010]  Clock net "clk" has 1597 sinks.
+[openroad-cts.log] [INFO CTS-0018]     Created 248 clock buffers.
+[openroad-cts.log] [INFO CTS-0102]  Path depth 3 - 4
+
+NOTE: CTS-created buffers and final clock-buffer
+instances are different measurements. Do not add them together.
+
+==============================================================================
+7. ELECTRICAL / DESIGN VIOLATIONS
+==============================================================================
+Max slew violations (aggregate)           : 2,576
+    Metric key: design__max_slew_violation__count
+Max fanout violations (aggregate)         : 174
+    Metric key: design__max_fanout_violation__count
+Max capacitance violations (aggregate)    : 25
+    Metric key: design__max_cap_violation__count
+
+==============================================================================
+8. ROUTING METRICS
+==============================================================================
+Detailed-route signal wirelength          : 497,525.000 um
+    Metric key: route__wirelength
+Estimated route wirelength                : 459,894.000 um
+    Metric key: route__wirelength__estimated
+Global-route wirelength                   : 692,083.000 um
+    Metric key: global_route__wirelength
+Final routing DRC errors                  : 0
+    Metric key: route__drc_errors
+
+DETAILED ROUTING ITERATION HISTORY
+   Iteration      DRC errors      Wirelength (um)
+           0             135          497,597.000
+           1              36          497,561.000
+           2              30          497,552.000
+           3               0          497,525.000
+           4               0          497,505.000
+
+DETAILED ROUTING LOG DIAGNOSTICS
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 4126.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 1473.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 1411.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 72.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 0.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 1859.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 637.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 482.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 15.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 0.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 135.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 36.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 30.
+[openroad-detailedrouting.log] [INFO DRT-0199]   Number of violations = 0.
+
+==============================================================================
+9. PHYSICAL SIGNOFF
+==============================================================================
+Routing DRC errors                        : 0
+    Metric key: route__drc_errors
+Magic DRC errors                          : 0
+    Metric key: magic__drc_error__count
+KLayout DRC errors                        : 0
+    Metric key: klayout__drc_error__count
+LVS errors                                : 0
+    Metric key: design__lvs_error__count
+Antenna violating nets                    : 0
+    Metric key: antenna__violating__nets
+Power-grid violations                     : 0
+    Metric key: design__power_grid_violation__count
+
+==============================================================================
+10. POWER ESTIMATES
+==============================================================================
+Internal power                            : 6.894303 mW
+    Source: power__internal__total (W converted to mW)
+Switching power                           : 4.621767 mW
+    Source: power__switching__total (W converted to mW)
+Leakage power                             : 0.000217 mW
+    Source: power__leakage__total (W converted to mW)
+Total power                               : 11.516287 mW
+    Source: power__total (W converted to mW)
+
+Caution: reported flow power is not automatically
+a workload-validated power measurement. Check activity annotation.
+
+==============================================================================
+11. BASELINE SUMMARY
+==============================================================================
+Standalone Yosys mapped area (um^2)       : 77,001.3504
+Final physical std-cell area (um^2)       : 132,432.0000
+Die area (um^2)                           : 237,213.0000
+Core area (um^2)                          : 221,436.0000
+Actual utilization (%)                    : 59.8060
+Configured utilization target (%)         : 35.0000
+Clock period constraint (ns)              : 24.0000
+Worst setup WNS (ns)                      : -2.9851
+Setup TNS (ns)                            : -291.5756
+Worst hold WNS (ns)                       : 0.1046
+Final clock buffers                       : 336.0000
+Timing-repair buffers                     : 3,514.0000
+Signal wirelength (um)                    : 497,525.0000
+Routing DRC                               : 0.0000
+Total reported power (mW)                 : 11.5163
+
+==============================================================================
+EXTRACTION COMPLETE
+==============================================================================
+All values above are taken from the listed source files.
+NOT FOUND means the exact metric was absent.
+Do not replace missing values with zero.

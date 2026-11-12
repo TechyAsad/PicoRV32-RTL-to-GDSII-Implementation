@@ -1,0 +1,109 @@
+OpenSTA 2.7.0 GITDIR-NOT Copyright (c) 2025, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+== 1. Cell library (typical corner)
+== 2. Final routed netlist
+Warning: runs/good/final/nl/picorv32.nl.v line 10485, module sky130_fd_sc_hd__fill_1 not found. Creating black box for FILLER_0_1007.
+Warning: runs/good/final/nl/picorv32.nl.v line 10488, module sky130_fd_sc_hd__fill_2 not found. Creating black box for FILLER_0_1016.
+Warning: runs/good/final/nl/picorv32.nl.v line 47653, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for TAP_TAPCELL_ROW_0_368.
+== 3. Wire parasitics (SPEF, nominal extraction)
+== 4. The constraints LibreLane signed off with
+
+######## SETUP: slowest path ########
+Startpoint: resetn (input port clocked by clk)
+Endpoint: _10921_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout      Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------------
+                            0.000    0.000   clock clk (rise edge)
+                            0.000    0.000   clock network delay (propagated)
+                            4.800    4.800 ^ input external delay
+     1    0.004    0.025    0.016    4.816 ^ resetn (in)
+     1    0.004    0.053    0.256    5.071 ^ input34/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     4    0.056    0.558    0.637    5.708 ^ fanout2173/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     3    0.029    0.293    0.552    6.260 ^ fanout2155/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     4    0.032    0.329    0.539    6.799 ^ fanout2154/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     3    0.018    0.189    0.442    7.241 ^ fanout2151/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     6    0.033    0.339    0.521    7.762 ^ fanout2149/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     1    0.003    0.052    0.049    7.811 v _04923_/Y (sky130_fd_sc_hd__inv_2)
+     3    0.059    0.429    0.572    8.383 v fanout2145/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     3    0.043    0.316    0.609    8.992 v fanout2140/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     3    0.023    0.173    0.472    9.464 v fanout2137/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     6    0.046    0.336    0.551   10.015 v fanout2134/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     6    0.035    0.258    0.544   10.559 v fanout2133/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     2    0.051    0.548    0.538   11.097 ^ _04992_/Y (sky130_fd_sc_hd__nor2_2)
+     3    0.045    0.456    0.670   11.767 ^ fanout1087/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     6    0.061    0.332    0.420   12.187 ^ fanout1084/X (sky130_fd_sc_hd__clkbuf_2)
+     5    0.025    0.141    0.293   12.480 ^ _06232_/X (sky130_fd_sc_hd__o21a_2)
+     2    0.008    0.058    0.091   12.571 v _06236_/Y (sky130_fd_sc_hd__o21ai_2)
+     6    0.017    0.135    0.345   12.915 v fanout858/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     4    0.014    0.112    0.575   13.490 v _06474_/X (sky130_fd_sc_hd__or3b_2)
+     1    0.004    0.105    0.588   14.079 v _07240_/X (sky130_fd_sc_hd__or4_2)
+     3    0.072    0.523    0.668   14.747 v fanout420/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     4    0.040    0.297    0.617   15.364 v fanout412/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     4    0.075    0.151    0.372   15.735 v load_slew413/X (sky130_fd_sc_hd__clkbuf_4)
+     2    0.017    0.133    0.386   16.122 v fanout410/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     5    0.063    0.129    0.276   16.397 v wire411/X (sky130_fd_sc_hd__clkbuf_4)
+     2    0.013    0.108    0.356   16.753 v fanout408/X (sky130_fd_sc_hd__clkdlybuf4s25_1)
+     5    0.055    0.080    0.229   16.982 v load_slew409/X (sky130_fd_sc_hd__buf_4)
+     1    0.003    0.054    0.334   17.316 v _07250_/X (sky130_fd_sc_hd__mux2_1)
+                   0.054    0.000   17.317 v _10921_/D (sky130_fd_sc_hd__dfxtp_2)
+                                    17.317   data arrival time
+
+                           24.000   24.000   clock clk (rise edge)
+                            1.147   25.147   clock network delay (propagated)
+                           -0.250   24.897   clock uncertainty
+                            0.000   24.897   clock reconvergence pessimism
+                                    24.897 ^ _10921_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                           -0.113   24.783   library setup time
+                                    24.783   data required time
+---------------------------------------------------------------------------------
+                                    24.783   data required time
+                                   -17.317   data arrival time
+---------------------------------------------------------------------------------
+                                     7.467   slack (MET)
+
+
+
+######## HOLD: fastest path ########
+Startpoint: _11361_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _11361_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   1.147    1.147   clock network delay (propagated)
+   0.000    1.147 ^ _11361_/CLK (sky130_fd_sc_hd__dfxtp_2)
+   0.325    1.472 v _11361_/Q (sky130_fd_sc_hd__dfxtp_2)
+   0.052    1.524 ^ _04917_/Y (sky130_fd_sc_hd__inv_2)
+   0.124    1.648 ^ _09698_/X (sky130_fd_sc_hd__mux2_1)
+   0.032    1.680 v _09699_/Y (sky130_fd_sc_hd__nor2_2)
+   0.000    1.680 v _11361_/D (sky130_fd_sc_hd__dfxtp_2)
+            1.680   data arrival time
+
+   0.000    0.000   clock clk (rise edge)
+   1.267    1.267   clock network delay (propagated)
+   0.250    1.517   clock uncertainty
+  -0.121    1.397   clock reconvergence pessimism
+            1.397 ^ _11361_/CLK (sky130_fd_sc_hd__dfxtp_2)
+  -0.031    1.365   library hold time
+            1.365   data required time
+-----------------------------------------------------------
+            1.365   data required time
+           -1.680   data arrival time
+-----------------------------------------------------------
+            0.315   slack (MET)
+
+
+
+######## SUMMARY ########
+worst slack max 7.467
+worst slack min 0.315
+tns max 0.000

@@ -1,0 +1,4 @@
+.git/
+runs/
+*.tar.gz
+*.tar.gz.part-*
